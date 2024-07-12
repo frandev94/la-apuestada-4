@@ -9,7 +9,11 @@
                 "agustin51"
             ]
         ],
-        "banner": "https://cdn.lavelada.dev/matches/title-1-agustin-51-vs-carreraaa.webp"
+        "banner": "https://cdn.lavelada.dev/matches/title-1-agustin-51-vs-carreraaa.webp",
+        "photos": [
+            "https://cdn.lavelada.dev/boxers/vote/vote-1-carreraaa.webp",
+            "https://cdn.lavelada.dev/boxers/vote/vote-1-agustin-51.webp"
+        ]
     },
     {
         "name": "guanyar vs la cobra",
@@ -21,7 +25,11 @@
                 "la cobra"
             ]
         ],
-        "banner": "https://cdn.lavelada.dev/matches/title-2-guanyar-vs-la-cobra.webp"
+        "banner": "https://cdn.lavelada.dev/matches/title-2-guanyar-vs-la-cobra.webp",
+        "photos": [
+            "https://cdn.lavelada.dev/boxers/vote/vote-2-guanyar.webp",
+            "https://cdn.lavelada.dev/boxers/vote/vote-2-la-cobra.webp"
+        ]
     },
     {
         "name": "zeling y nissaxter vs alana y amablitz",
@@ -35,7 +43,11 @@
                 "amablitz"
             ]
         ],
-        "banner": "https://cdn.lavelada.dev/matches/title-3-zeling-y-nissaxter-vs-alana-y-ama-blitz.webp"
+        "banner": "https://cdn.lavelada.dev/matches/title-3-zeling-y-nissaxter-vs-alana-y-ama-blitz.webp",
+        "photos": [
+            "https://cdn.lavelada.dev/boxers/vote/vote-3-zeling-nissaxter.webp",
+            "https://cdn.lavelada.dev/boxers/vote/vote-3-alana-ama-blitz.webp"
+        ]
     },
     {
         "name": "viruzz vs shelao",
@@ -47,7 +59,11 @@
                 "shelao"
             ]
         ],
-        "banner": "https://cdn.lavelada.dev/matches/title-4-viruzz-vs-shelao.webp"
+        "banner": "https://cdn.lavelada.dev/matches/title-4-viruzz-vs-shelao.webp",
+        "photos": [
+            "https://cdn.lavelada.dev/boxers/vote/vote-4-viruzz.webp",
+            "https://cdn.lavelada.dev/boxers/vote/vote-4-shelao.webp"
+        ]
     },
     {
         "name": "el rey de la pista",
@@ -83,7 +99,11 @@
                 "will"
             ]
         ],
-        "banner": "https://cdn.lavelada.dev/matches/title-5-rey-de-la-pista.webp"
+        "banner": "https://cdn.lavelada.dev/matches/title-5-rey-de-la-pista.webp",
+        "photos": [
+            "https://cdn.lavelada.dev/boxers/vote/vote-1-carreraaa.webp",
+            "https://cdn.lavelada.dev/boxers/vote/vote-1-agustin-51.webp"
+        ]
     },
     {
         "name": "yosoyplex vsel mariana",
@@ -95,6 +115,10 @@
                 "el mariana"
             ]
         ],
-        "banner": "https://cdn.lavelada.dev/matches/title-6-el-mariana-vs-plex.webp"
+        "banner": "https://cdn.lavelada.dev/matches/title-6-el-mariana-vs-plex.webp",
+        "photos": [
+            "https://cdn.lavelada.dev/boxers/vote/vote-6-plex.webp",
+            "https://cdn.lavelada.dev/boxers/vote/vote-6-el-mariana.webp"
+        ]
     }
 ]
