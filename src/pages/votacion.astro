@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Container } from 'react-bootstrap';
+import FormularioApuestada from '../components/FormularioApuestada';
+---
+
+<Layout title="La Apuestada IV">
+    <Container className='mt-3'>
+        <h1>Votación</h1>
+        <FormularioApuestada client:visible />
+    </Container>
+</Layout>
