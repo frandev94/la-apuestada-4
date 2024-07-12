@@ -21,11 +21,7 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
-    <Navigation client:only />
+    <Navigation client:only="react" />
     <slot />
   </body>
 </html>
-
-<style>
-  .nabvar-brand, .link, { color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;}
-</style>

@@ -1,124 +1,108 @@
 [
-    {
-        "name": "carreraaa vs agustin51",
-        "teams": [
-            [
-                "carreraaa"
-            ],
-            [
-                "agustin51"
-            ]
-        ],
-        "banner": "https://cdn.lavelada.dev/matches/title-1-agustin-51-vs-carreraaa.webp",
-        "photos": [
-            "https://cdn.lavelada.dev/boxers/vote/vote-1-carreraaa.webp",
-            "https://cdn.lavelada.dev/boxers/vote/vote-1-agustin-51.webp"
-        ]
-    },
-    {
-        "name": "guanyar vs la cobra",
-        "teams": [
-            [
-                "guanyar"
-            ],
-            [
-                "la cobra"
-            ]
-        ],
-        "banner": "https://cdn.lavelada.dev/matches/title-2-guanyar-vs-la-cobra.webp",
-        "photos": [
-            "https://cdn.lavelada.dev/boxers/vote/vote-2-guanyar.webp",
-            "https://cdn.lavelada.dev/boxers/vote/vote-2-la-cobra.webp"
-        ]
-    },
-    {
-        "name": "zeling y nissaxter vs alana y amablitz",
-        "teams": [
-            [
-                "zeling",
-                "nissaxter"
-            ],
-            [
-                "alana",
-                "amablitz"
-            ]
-        ],
-        "banner": "https://cdn.lavelada.dev/matches/title-3-zeling-y-nissaxter-vs-alana-y-ama-blitz.webp",
-        "photos": [
-            "https://cdn.lavelada.dev/boxers/vote/vote-3-zeling-nissaxter.webp",
-            "https://cdn.lavelada.dev/boxers/vote/vote-3-alana-ama-blitz.webp"
-        ]
-    },
-    {
-        "name": "viruzz vs shelao",
-        "teams": [
-            [
-                "viruzz"
-            ],
-            [
-                "shelao"
-            ]
-        ],
-        "banner": "https://cdn.lavelada.dev/matches/title-4-viruzz-vs-shelao.webp",
-        "photos": [
-            "https://cdn.lavelada.dev/boxers/vote/vote-4-viruzz.webp",
-            "https://cdn.lavelada.dev/boxers/vote/vote-4-shelao.webp"
-        ]
-    },
-    {
-        "name": "el rey de la pista",
-        "teams": [
-            [
-                "robertocein"
-            ],
-            [
-                "aldo geo"
-            ],
-            [
-                "folagor"
-            ],
-            [
-                "karchez"
-            ],
-            [
-                "pelicanger"
-            ],
-            [
-                "peldanyos"
-            ],
-            [
-                "unicornio"
-            ],
-            [
-                "skain"
-            ],
-            [
-                "sezar blue"
-            ],
-            [
-                "will"
-            ]
-        ],
-        "banner": "https://cdn.lavelada.dev/matches/title-5-rey-de-la-pista.webp",
-        "photos": [
-            "https://cdn.lavelada.dev/boxers/vote/vote-1-carreraaa.webp",
-            "https://cdn.lavelada.dev/boxers/vote/vote-1-agustin-51.webp"
-        ]
-    },
-    {
-        "name": "yosoyplex vsel mariana",
-        "teams": [
-            [
-                "yosoyplex"
-            ],
-            [
-                "el mariana"
-            ]
-        ],
-        "banner": "https://cdn.lavelada.dev/matches/title-6-el-mariana-vs-plex.webp",
-        "photos": [
-            "https://cdn.lavelada.dev/boxers/vote/vote-6-plex.webp",
-            "https://cdn.lavelada.dev/boxers/vote/vote-6-el-mariana.webp"
-        ]
-    }
+  {
+    "name": "carreraaa vs agustin51",
+    "teams": [
+      {
+        "name": "carreraaa",
+        "photo": "https://cdn.lavelada.dev/boxers/vote/vote-1-carreraaa.webp"
+      },
+      {
+        "name": "agustin51",
+        "photo": "https://cdn.lavelada.dev/boxers/vote/vote-1-agustin-51.webp"
+      }
+    ],
+    "banner": "https://cdn.lavelada.dev/matches/title-1-agustin-51-vs-carreraaa.webp"
+  },
+  {
+    "name": "guanyar vs la cobra",
+    "teams": [
+      {
+        "name": "guanyar",
+        "photo": "https://cdn.lavelada.dev/boxers/vote/vote-2-guanyar.webp"
+      },
+      {
+        "name": "la cobra",
+        "photo": "https://cdn.lavelada.dev/boxers/vote/vote-2-la-cobra.webp"
+      }
+    ],
+    "banner": "https://cdn.lavelada.dev/matches/title-2-guanyar-vs-la-cobra.webp"
+  },
+  {
+    "name": "zeling y nissaxter vs alana y amablitz",
+    "teams": [
+      {
+        "name": "zeling & nissaxter",
+        "photo": "https://cdn.lavelada.dev/boxers/vote/vote-3-zeling-nissaxter.webp"
+      },
+      {
+        "name": "alana & amablitz",
+        "photo": "https://cdn.lavelada.dev/boxers/vote/vote-3-alana-ama-blitz.webp"
+      }
+    ],
+    "banner": "https://cdn.lavelada.dev/matches/title-3-zeling-y-nissaxter-vs-alana-y-ama-blitz.webp"
+  },
+  {
+    "name": "viruzz vs shelao",
+    "teams": [
+      {
+        "name": "viruzz",
+        "photo": "https://cdn.lavelada.dev/boxers/vote/vote-4-viruzz.webp"
+      },
+      {
+        "name": "shelao",
+        "photo": "https://cdn.lavelada.dev/boxers/vote/vote-4-shelao.webp"
+      }
+    ],
+    "banner": "https://cdn.lavelada.dev/matches/title-4-viruzz-vs-shelao.webp"
+  },
+  {
+    "name": "el rey de la pista",
+    "teams": [
+      {
+        "name": "robertocein"
+      },
+      {
+        "name": "aldo geo"
+      },
+      {
+        "name": "folagor"
+      },
+      {
+        "name": "karchez"
+      },
+      {
+        "name": "pelicanger"
+      },
+      {
+        "name": "peldanyos"
+      },
+      {
+        "name": "unicornio"
+      },
+      {
+        "name": "skain"
+      },
+      {
+        "name": "sezar blue"
+      },
+      {
+        "name": "will"
+      }
+    ],
+    "banner": "https://cdn.lavelada.dev/matches/title-5-rey-de-la-pista.webp"
+  },
+  {
+    "name": "yosoyplex vsel mariana",
+    "teams": [
+      {
+        "name": "yosoyplex",
+        "photo": "https://cdn.lavelada.dev/boxers/vote/vote-6-plex.webp"
+      },
+      {
+        "name": "el mariana",
+        "photo": "https://cdn.lavelada.dev/boxers/vote/vote-6-el-mariana.webp"
+      }
+    ],
+    "banner": "https://cdn.lavelada.dev/matches/title-6-el-mariana-vs-plex.webp"
+  }
 ]
