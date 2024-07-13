@@ -1,0 +1,31 @@
+.combat {
+  mask-image: radial-gradient(black 55%, transparent 75%);
+  background-color: #ffff0010;
+}
+
+.rainbow {
+  background: linear-gradient(
+    to right,
+    #6666ff,
+    #0099ff,
+    #00ff00,
+    #ff3399,
+    #ff0000,
+    #6666ff
+  );
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}

@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Container, Image } from "react-bootstrap";
+import { BASE_URL } from "../util/consts";
 ---
 
 <Layout title="La Apuestada IV">
-  <Container className="mt-3 text-center">
+  <Container className="mt-3 text-center py-5">
     <h3>Prepárate para la Apuestada de</h3>
 
     <div class="logo-container text-white my-3">
@@ -31,21 +32,24 @@ import { Container, Image } from "react-bootstrap";
         <use href="#hero-logo-header"></use>
       </svg>
     </div>
-    <main transition:name="main" class="my-3">
-      <h6>A más aciertes, mayor porcentaje del premio ganarás.</h6>
+    <main transition:name="main" class="mt-5 my-3 rainbow">
+      <h6>
+        Quienes más acierten, <br />se lo lleva <span class="fs-4 fw-bold"
+          >TODO</span
+        >
+      </h6>
       <p class="my-5">
-        <small>
-          <a href="/votacion">
-            <span> Haz tu porra </span><br />
-            <Image
-              className="ms-3"
-              rounded
-              width={100}
-              src="/lvda.png"
-              alt="La Velada 4"
-            />
-          </a>
-        </small>
+        <a href={BASE_URL + "/votacion"}>
+          <span>Haz tu porra</span>
+          <br />
+          <Image
+            className="mt-3"
+            rounded
+            width={100}
+            src={BASE_URL + "/lvda.png"}
+            alt="La Velada 4"
+          />
+        </a>
       </p>
     </main>
   </Container>

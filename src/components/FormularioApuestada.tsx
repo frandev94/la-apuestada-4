@@ -1,9 +1,9 @@
-import { Col, Form, Row, Image, Button, Alert } from "react-bootstrap";
+import { Alert, Button, Col, Form, Image, Row } from "react-bootstrap";
 
 import combats from "../assets/combats.json";
 import { classNames } from "../util";
 import { useVotesStore, type Vote } from "../store/votes";
-import { useState, type FormEvent } from "react";
+import { type FormEvent, useState } from "react";
 
 export default function FormularioApuestada() {
   const [error, setError] = useState<Error>();
@@ -28,13 +28,14 @@ export default function FormularioApuestada() {
     }
     e.currentTarget.reset();
   };
-  if (error)
+  if (error) {
     return (
       <Alert variant="danger" dismissible onClose={() => setError(undefined)}>
         <Alert.Heading>Error</Alert.Heading>
         <div>{error.message}</div>
       </Alert>
     );
+  }
 
   return (
     <Form className="my-5" onSubmit={handleSubmit}>
@@ -48,7 +49,7 @@ export default function FormularioApuestada() {
             className="fs-2"
             placeholder="gonpardo"
             required
-            minLength={6}
+            minLength={4}
             maxLength={20}
           />
         </Col>
@@ -82,7 +83,7 @@ type CombatProps = {
 function Combat({ combat }: CombatProps) {
   return (
     <Form.Group as={Row} className="mb-3 border-top border-1 border-primary">
-      <Col sm="12">
+      <Col sm="12" className="combat p-5">
         <Row className="justify-content-md-center p-3">
           <Image src={combat.banner} alt={combat.name} />
         </Row>

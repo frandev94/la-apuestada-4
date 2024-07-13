@@ -9,7 +9,7 @@ export type Vote = {
   [key in MatchName]: TeamName;
 };
 
-interface UserVote {
+export interface UserVote {
   user: UserName;
   vote: Vote;
 }
@@ -28,8 +28,10 @@ export const useVotesStore = create<VotesState>()(
         const existingVote = get().votes.find((v) => v.user === user);
         if (existingVote) throw Error("User already voted");
         const name = user.trim().replace(/\s/g, "");
-        if (!name || !name.length || name.length < 3)
+        if (!name || !name.length || name.length < 3) {
           throw Error("Invalid user name");
+        }
+        console.log({ user, vote });
         set({ votes: [...get().votes, { user, vote }] });
       },
       deleteAllVotes: () => {
