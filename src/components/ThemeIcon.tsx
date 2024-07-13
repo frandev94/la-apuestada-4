@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import useThemeStore from "../store/theme";
+import { useThemeStore } from "../store/theme";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function ThemeIcon() {
