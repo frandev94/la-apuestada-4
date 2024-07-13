@@ -1,18 +1,14 @@
 import { type FormEvent, useState } from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
-import { type UserVote, useVotesStore } from "../store/votes";
+import { Badge, Button, Col, Form, ProgressBar, Row } from "react-bootstrap";
+import { type UserVote, useVotesStore, type Vote } from "../store/votes";
 import combats from "../assets/combats.json";
 import { isEven } from "../util";
 
 type Winner = string;
 
-interface IWinners {
-  [combat: string]: Winner;
-}
-
 function ResutadosApuestada() {
   const votes = useVotesStore((s) => s.votes);
-  const [matchWinners, setMatchWinners] = useState<IWinners>();
+  const [matchWinners, setMatchWinners] = useState<Vote>();
   const setWinner = (match: string, winner: string) => {
     if (!combats.some((c) => c.name === match)) {
       throw new Error(`No existe la apuesta ${match}`);
@@ -50,35 +46,48 @@ function MatchWinners({
     <Form className="my-4" onSubmit={onSubmit}>
       <h2 className="my-4">Ganadores de los combates</h2>
       <div className="px-2">
-        {combats.map((combat) => (
-          <>
-            <Row sm={2} key={combat.name} className="mb-3">
-              <Col className="text-start fw-bold fs-5" xs={5} sm={4}>
-                <div>{combat.name.toLocaleUpperCase()}</div>
-              </Col>
-              <Col xs={7} sm={8}>
-                <Form.Group as={Row} xs={1} sm={2} className="">
-                  {combat.teams.map((team, idx) => (
-                    <Col key={team.name}>
-                      <Form.Check
-                        name={combat.name}
-                        required
-                        className={isEven(idx) ? "text-end" : "text-start"}
-                        type="radio"
-                        label={team.name.toUpperCase()}
-                        reverse={isEven(idx)}
-                      />
-                    </Col>
-                  ))}
-                </Form.Group>
-              </Col>
-            </Row>
-            <hr />
-          </>
+        {combats.map(({ name, teams }) => (
+          <CombatWinnerInputs key={name} name={name} teams={teams} />
         ))}
       </div>
       <Button type="submit">Ver Resultados de los apostadores</Button>
     </Form>
+  );
+}
+
+function CombatWinnerInputs({
+  name,
+  teams,
+}: {
+  name: string;
+  teams: { name: string }[];
+}) {
+  return (
+    <>
+      <Row sm={2} key={name} className="mb-3">
+        <Col className="text-start fw-bold fs-5" xs={5} sm={4}>
+          <div>{name.toLocaleUpperCase()}</div>
+        </Col>
+        <Col xs={7} sm={8}>
+          <Form.Group as={Row} xs={1} sm={2} className="">
+            {teams.map((team, idx) => (
+              <Col key={team.name}>
+                <Form.Check
+                  name={name}
+                  value={team.name}
+                  required
+                  className={isEven(idx) ? "text-end" : "text-start"}
+                  type="radio"
+                  label={team.name.toUpperCase()}
+                  reverse={isEven(idx)}
+                />
+              </Col>
+            ))}
+          </Form.Group>
+        </Col>
+      </Row>
+      <hr />
+    </>
   );
 }
 
@@ -87,22 +96,81 @@ function UsersStadistics({
   userVotes,
 }: {
   userVotes: UserVote[];
-  matchWinners: IWinners;
+  matchWinners: Vote;
 }) {
   return (
-    <>
+    <div>
       <h2 className="my-4">Estadisticas de los colegones</h2>
       <div>
-        {JSON.stringify(matchWinners)}
-        <br />
-        {JSON.stringify(userVotes)}
+        {userVotes.map(({ user, vote }) => (
+          <UserStats
+            key={user}
+            name={user}
+            vote={vote}
+            winners={matchWinners}
+          />
+        ))}
       </div>
-      {userVotes.map((userVote) => (
-        <div key={userVote.user}>
-          <div>{userVote.user}</div>
-          <div>{JSON.stringify(userVote.vote)}</div>
-        </div>
-      ))}
-    </>
+    </div>
   );
+}
+function UserStats({
+  name,
+  vote,
+  winners,
+}: {
+  name: string;
+  vote: Vote;
+  winners: Vote;
+}) {
+  const points = calculatePoints(vote, winners);
+  const winRate = (points * 100) / Object.keys(winners).length;
+  return (
+    <div key={name} className="mb-3">
+      <h3 className="my-3 rainbow fw-bold">{name.toUpperCase()}</h3>
+      <Row>
+        <Col sm={12} className="text-start">
+          <Row>
+            {Object.entries(winners).map(([key, winner]) => (
+              <Col
+                sm={6}
+                key={key}
+                className="p-3 mb-3 text-center border border-2 border-primary"
+              >
+                <h6>{key.toUpperCase()}</h6>
+                <div>
+                  <span>Respuesta: </span>
+                  <Badge bg={vote[key] === winner ? "success" : "danger"}>
+                    {vote[key]}
+                  </Badge>
+                  <Badge bg="info">
+                    {vote[key] === winner ? "+ 1" : "+ 0"}
+                  </Badge>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Col>
+        <Col className="mb-5">
+          <div>POINTS: {points}</div>
+          <div>
+            <ProgressBar
+              variant={
+                winRate < 33 ? "danger" : winRate < 66 ? "warning" : "success"
+              }
+              now={winRate}
+            />
+          </div>
+        </Col>
+      </Row>
+    </div>
+  );
+}
+
+function calculatePoints(vote: Vote, Winner: Vote): number {
+  let points = 0;
+  Object.entries(vote).forEach(([key]) => {
+    points += vote[key] === Winner[key] ? 1 : 0;
+  });
+  return points;
 }
