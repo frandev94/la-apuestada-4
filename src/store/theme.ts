@@ -9,12 +9,16 @@ interface ThemeState {
   change: (theme: ThemeType) => void;
 }
 
-const getWindowTheme = (): ThemeType=> (window?.matchMedia && window?.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark" : "light";
+const getWindowTheme = (): ThemeType =>
+  window?.matchMedia &&
+  window?.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 
 /**
  * Store to manage theme state
  */
-const useThemeStore = create<ThemeState>()(
+export const useThemeStore = create<ThemeState>()(
   persist(
     (set) => ({
       theme: getWindowTheme() ?? "light",
@@ -22,14 +26,13 @@ const useThemeStore = create<ThemeState>()(
       toggle: () =>
         set((state) => {
           console.log(state, "toggle");
-          return ({
-          theme: state.theme === "light" ? "dark" : "light",
-        })}),
+          return {
+            theme: state.theme === "light" ? "dark" : "light",
+          };
+        }),
     }),
     {
       name: "theme-storage",
     }
   )
 );
-
-export default useThemeStore;
